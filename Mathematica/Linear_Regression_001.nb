@@ -1,0 +1,1499 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     73652,       1491]
+NotebookOptionsPosition[     72838,       1469]
+NotebookOutlinePosition[     73246,       1485]
+CellTagsIndexPosition[     73203,       1482]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"d", "=", 
+  RowBox[{"Import", "[", 
+   RowBox[{
+   "\"\<C:\\\\Users\\\\inseg\\\\Downloads\\\\gdp_per_capita.csv\>\"", ",", 
+    "\"\<CSV\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.859325720014121*^9, 3.859325770657086*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"9a570a21-f7d8-4d06-9a70-d852a453047d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+   "{", "\<\"Country\\tSubject \
+Descriptor\\tUnits\\tScale\\tCountry/Series-specific Notes\\t2015\\tEstimates \
+Start After\"\>", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Afghanistan\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t599.994\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Albania\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t3\"\
+\>", ",", "\<\"995.383\\t2010\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Algeria\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t4\"\
+\>", ",", "\<\"318.135\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Angola\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t4\"\
+\>", ",", "\<\"100.315\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Antigua and Barbuda\\tGross domestic product per capita\"\>",
+      ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t14\"\>", ",", "\<\"414.302\\t2011\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Argentina\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t13\"\>", ",", "\<\"588.846\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Armenia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t3\"\
+\>", ",", "\<\"534.860\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Australia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t50\"\>", ",", "\<\"961.865\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Austria\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t43\"\>", ",", "\<\"724.031\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Azerbaijan\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t5\"\
+\>", ",", "\<\"739.433\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"The Bahamas\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t23\"\>", ",", "\<\"902.805\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Bahrain\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t23\"\>", ",", "\<\"509.981\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Bangladesh\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"286.868\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Barbados\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t15\"\>", ",", "\<\"773.555\\t2010\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Belarus\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t5\"\
+\>", ",", "\<\"749.119\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Belgium\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t40\"\>", ",", "\<\"106.632\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Belize\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t4\"\
+\>", ",", "\<\"841.735\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Benin\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t780.063\\t2011\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Bhutan\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t2\"\
+\>", ",", "\<\"843.402\\t2011\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Bolivia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t2\"\
+\>", ",", "\<\"886.231\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Bosnia and Herzegovina\\tGross domestic product per capita\"\
+\>", ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t4\"\
+\>", ",", "\<\"088.212\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Botswana\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t6\"\
+\>", ",", "\<\"040.957\\t2008\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Brazil\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t8\"\
+\>", ",", "\<\"669.998\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Brunei Darussalam\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t28\"\>", ",", "\<\"236.640\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Bulgaria\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t6\"\
+\>", ",", "\<\"831.661\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Burkina Faso\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t614.500\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Burundi\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t305.783\\t0\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Cabo Verde\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t3\"\
+\>", ",", "\<\"038.511\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Cambodia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"168.036\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Cameroon\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"232.423\\t2010\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Canada\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t43\"\>", ",", "\<\"331.961\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Central African Republic\\tGross domestic product per capita\
+\"\>", ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  \
+Gross domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t334.870\\t2004\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Chad\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t941.903\\t2004\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Chile\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t13\"\>", ",", "\<\"340.905\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"China\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t7\"\
+\>", ",", "\<\"989.720\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Colombia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t6\"\
+\>", ",", "\<\"083.510\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Comoros\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t736.348\\t2003\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Democratic Republic of the Congo\\tGross domestic product \
+per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t475.916\\t1983\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Republic of Congo\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t2\"\
+\>", ",", "\<\"032.267\\t2004\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Costa Rica\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t10\"\>", ",", "\<\"936.243\\t2011\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"C\[OHat]te d'Ivoire\\tGross domestic product per capita\"\>",
+      ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"314.678\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Croatia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t11\"\>", ",", "\<\"572.905\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Cyprus\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t22\"\>", ",", "\<\"587.490\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Czech Republic\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t17\"\>", ",", "\<\"256.918\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Denmark\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t52\"\>", ",", "\<\"114.165\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Djibouti\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"788.363\\t2009\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Dominica\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t7\"\
+\>", ",", "\<\"030.145\\t2011\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Dominican Republic\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t6\"\
+\>", ",", "\<\"755.736\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Ecuador\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t6\"\
+\>", ",", "\<\"070.951\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Egypt\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t3\"\
+\>", ",", "\<\"740.249\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"El Salvador\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t4\"\
+\>", ",", "\<\"040.317\\t2007\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Equatorial Guinea\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t11\"\>", ",", "\<\"762.386\\t2010\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Eritrea\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t694.753\\t2006\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Estonia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t17\"\>", ",", "\<\"288.083\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Ethiopia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t686.593\\t2008\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Fiji\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t5\"\
+\>", ",", "\<\"373.633\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Finland\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t41\"\>", ",", "\<\"973.988\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"France\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t37\"\>", ",", "\<\"675.006\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Gabon\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t7\"\
+\>", ",", "\<\"735.939\\t0\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"The Gambia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t450.859\\t2010\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Georgia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t3\"\
+\>", ",", "\<\"788.624\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Germany\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t40\"\>", ",", "\<\"996.511\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Ghana\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"340.416\\t0\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Greece\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t18\"\>", ",", "\<\"064.288\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Grenada\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t8\"\
+\>", ",", "\<\"936.578\\t2011\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Guatemala\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t3\"\
+\>", ",", "\<\"929.081\\t2010\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Guinea\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t542.417\\t2009\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Guinea-Bissau\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t594.940\\t2004\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Guyana\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t4\"\
+\>", ",", "\<\"125.021\\t2002\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Haiti\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t804.564\\t0\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Honduras\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t2\"\
+\>", ",", "\<\"406.615\\t2001\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hong Kong SAR\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t42\"\>", ",", "\<\"389.630\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hungary\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t12\"\>", ",", "\<\"239.894\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Iceland\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t50\"\>", ",", "\<\"854.583\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"India\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"617.309\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Indonesia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t3\"\
+\>", ",", "\<\"362.357\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Islamic Republic of Iran\\tGross domestic product per capita\
+\"\>", ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  \
+Gross domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t4\"\
+\>", ",", "\<\"877.069\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Iraq\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t4\"\
+\>", ",", "\<\"819.487\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Ireland\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t51\"\>", ",", "\<\"350.744\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Israel\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t35\"\>", ",", "\<\"343.336\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Italy\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t29\"\>", ",", "\<\"866.581\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Jamaica\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t4\"\
+\>", ",", "\<\"948.018\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Japan\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t32\"\>", ",", "\<\"485.545\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Jordan\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t5\"\
+\>", ",", "\<\"513.009\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kazakhstan\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t9\"\
+\>", ",", "\<\"795.629\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kenya\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"388.450\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kiribati\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"427.619\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Korea\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t27\"\>", ",", "\<\"195.197\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kosovo\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kuwait\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t29\"\>", ",", "\<\"363.027\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Kyrgyz Republic\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"112.810\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Lao P.D.R.\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"778.713\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Latvia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t13\"\>", ",", "\<\"618.569\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Lebanon\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t11\"\>", ",", "\<\"236.793\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Lesotho\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"051.606\\t2006\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Liberia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t473.636\\t2009\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Libya\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t6\"\
+\>", ",", "\<\"058.671\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Lithuania\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t14\"\>", ",", "\<\"210.280\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Luxembourg\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t101\
+\"\>", ",", "\<\"994.093\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"FYR Macedonia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t4\"\
+\>", ",", "\<\"786.840\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Madagascar\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t401.771\\t2006\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Malawi\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t354.275\\t2011\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Malaysia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t9\"\
+\>", ",", "\<\"556.774\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Maldives\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t8\"\
+\>", ",", "\<\"999.971\\t2006\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Mali\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t801.844\\t2010\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Malta\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t22\"\>", ",", "\<\"828.897\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Marshall Islands\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t3\"\
+\>", ",", "\<\"355.547\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Mauritania\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"282.331\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Mauritius\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t9\"\
+\>", ",", "\<\"218.428\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Mexico\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t9\"\
+\>", ",", "\<\"009.280\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Micronesia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t3\"\
+\>", ",", "\<\"072.685\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Moldova\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"804.685\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Mongolia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t3\"\
+\>", ",", "\<\"951.906\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Montenegro\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t6\"\
+\>", ",", "\<\"489.101\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Morocco\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t3\"\
+\>", ",", "\<\"078.593\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Mozambique\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t534.879\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Myanmar\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"291.963\\t2007\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Namibia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t5\"\
+\>", ",", "\<\"776.903\\t2008\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nepal\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t751.120\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Netherlands\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t43\"\>", ",", "\<\"603.115\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"New Zealand\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t37\"\>", ",", "\<\"044.891\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nicaragua\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"949.232\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Niger\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t405.213\\t2009\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nigeria\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t2\"\
+\>", ",", "\<\"742.861\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Norway\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t74\"\>", ",", "\<\"822.106\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Oman\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t15\"\>", ",", "\<\"232.961\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Pakistan\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"449.978\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Palau\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t16\"\>", ",", "\<\"070.421\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Panama\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t13\"\>", ",", "\<\"012.562\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Papua New Guinea\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t2\"\
+\>", ",", "\<\"084.713\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Paraguay\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t4\"\
+\>", ",", "\<\"009.567\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Peru\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t6\"\
+\>", ",", "\<\"021.104\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Philippines\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t2\"\
+\>", ",", "\<\"858.144\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Poland\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t12\"\>", ",", "\<\"495.334\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Portugal\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t19\"\>", ",", "\<\"121.592\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Qatar\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t76\"\>", ",", "\<\"576.080\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Romania\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t8\"\
+\>", ",", "\<\"906.296\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Russia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t9\"\
+\>", ",", "\<\"054.914\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Rwanda\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t731.512\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Samoa\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t4\"\
+\>", ",", "\<\"334.217\\t2011\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"San Marino\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t49\"\>", ",", "\<\"846.896\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"S\[ATilde]o Tom\[EAcute] and Pr\[IAcute]ncipe\\tGross \
+domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"568.968\\t2011\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Saudi Arabia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t20\"\>", ",", "\<\"812.586\\t2010\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Senegal\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t913.024\\t2011\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Serbia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t5\"\
+\>", ",", "\<\"119.757\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Seychelles\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t14\"\>", ",", "\<\"940.706\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Sierra Leone\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t659.438\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Singapore\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t52\"\>", ",", "\<\"887.770\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Slovak Republic\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t15\"\>", ",", "\<\"991.736\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Slovenia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t20\"\>", ",", "\<\"732.482\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Solomon Islands\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"952.481\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"South Africa\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t5\"\
+\>", ",", "\<\"694.572\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"South Sudan\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t220.860\\t2008\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Spain\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t25\"\>", ",", "\<\"864.721\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Sri Lanka\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t3\"\
+\>", ",", "\<\"889.411\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"St. Kitts and Nevis\\tGross domestic product per capita\"\>",
+      ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t16\"\>", ",", "\<\"109.707\\t2003\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"St. Lucia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t8\"\
+\>", ",", "\<\"191.984\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"St. Vincent and the Grenadines\\tGross domestic product per \
+capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t6\"\
+\>", ",", "\<\"882.286\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Sudan\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t2\"\
+\>", ",", "\<\"175.397\\t2010\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Suriname\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t9\"\
+\>", ",", "\<\"305.687\\t2011\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Swaziland\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t3\"\
+\>", ",", "\<\"139.664\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Sweden\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t49\"\>", ",", "\<\"866.266\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Switzerland\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t80\"\>", ",", "\<\"675.308\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Syria\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\tn/a\
+\\t2010\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Taiwan Province of China\\tGross domestic product per capita\
+\"\>", ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  \
+Gross domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t22\"\>", ",", "\<\"287.562\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tajikistan\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t922.072\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tanzania\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t941.804\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Thailand\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t5\"\
+\>", ",", "\<\"742.282\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Timor-Leste\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t2\"\
+\>", ",", "\<\"244.307\\t2011\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Togo\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t569.435\\t2010\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tonga\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t3\"\
+\>", ",", "\<\"972.741\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Trinidad and Tobago\\tGross domestic product per capita\"\>",
+      ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t18\"\>", ",", "\<\"085.759\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tunisia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t3\"\
+\>", ",", "\<\"922.653\\t2010\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Turkey\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t9\"\
+\>", ",", "\<\"437.372\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Turkmenistan\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t6\"\
+\>", ",", "\<\"622.414\\t2004\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Tuvalu\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t3\"\
+\>", ",", "\<\"014.630\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Uganda\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t620.213\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Ukraine\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t2\"\
+\>", ",", "\<\"004.918\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"United Arab Emirates\\tGross domestic product per \
+capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t36\"\>", ",", "\<\"060.015\\t2010\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"United Kingdom\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t43\"\>", ",", "\<\"770.688\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"United States\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t55\"\>", ",", "\<\"805.204\\t2015\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Uruguay\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population \
+(Persons).\\t15\"\>", ",", "\<\"748.192\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Uzbekistan\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t2\"\
+\>", ",", "\<\"120.778\\t2013\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Vanuatu\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t2\"\
+\>", ",", "\<\"847.113\\t2014\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Venezuela\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t7\"\
+\>", ",", "\<\"744.746\\t2010\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Vietnam\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t2\"\
+\>", ",", "\<\"088.344\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Yemen\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"302.940\\t2008\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Zambia\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"350.151\\t2010\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Zimbabwe\\tGross domestic product per capita\"\>", 
+     ",", "\<\"current prices\\tU.S. dollars\\tUnits\\tSee notes for:  Gross \
+domestic product\"\>", 
+     ",", "\<\"current prices (National currency) Population (Persons).\\t1\"\
+\>", ",", "\<\"064.350\\t2012\"\>"}], "}"}], ",", 
+   RowBox[{"{", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"International Monetary Fund\"\>", 
+     ",", "\<\"World Economic Outlook Database\"\>", 
+     ",", "\<\"April 2016\"\>"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.859325772234065*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"a39e0539-4e4f-4864-b1c0-dfb1bbb0d029"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e", "=", 
+  RowBox[{"Import", "[", 
+   RowBox[{
+   "\"\<C:\\\\Users\\\\inseg\\\\Downloads\\\\oecd_bli_2015.csv\>\"", ",", 
+    "\"\<csv\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8593258034409814`*^9, 3.8593258278729877`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"9579587a-1df2-494d-a255-bc50bbda1b13"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   FrameBox[GridBox[{
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            
+            RowBox[{"\<\"LOCATION\"\>", ",", "\<\"Country\"\>", 
+             ",", "\<\"INDICATOR\"\>", ",", "\<\"Indicator\"\>", 
+             ",", "\<\"MEASURE\"\>", ",", "\<\"Measure\"\>", 
+             ",", "\<\"INEQUALITY\"\>", ",", "\<\"Inequality\"\>", 
+             ",", "\<\"Unit Code\"\>", ",", "\<\"Unit\"\>", 
+             ",", "\<\"PowerCode Code\"\>", ",", "\<\"PowerCode\"\>", 
+             ",", "\<\"Reference Period Code\"\>", 
+             ",", "\<\"Reference Period\"\>", ",", "\<\"Value\"\>", 
+             ",", "\<\"Flag Codes\"\>", ",", "\<\"Flags\"\>"}], "}"}], ",", 
+           RowBox[{"{", 
+            
+            RowBox[{"\<\"AUS\"\>", ",", "\<\"Australia\"\>", 
+             ",", "\<\"HO_BASE\"\>", 
+             ",", "\<\"Dwellings without basic facilities\"\>", 
+             ",", "\<\"L\"\>", ",", "\<\"Value\"\>", ",", "\<\"TOT\"\>", 
+             ",", "\<\"Total\"\>", ",", "\<\"PC\"\>", 
+             ",", "\<\"Percentage\"\>", ",", "0", ",", "\<\"units\"\>", 
+             ",", "\<\"\"\>", ",", "\<\"\"\>", ",", "1.1`", ",", "\<\"E\"\>", 
+             ",", "\<\"Estimated value\"\>"}], "}"}], ",", 
+           TemplateBox[{"3289"},
+            "OutputSizeLimit`Skeleton"], ",", 
+           RowBox[{"{", 
+            
+            RowBox[{"\<\"SVN\"\>", ",", "\<\"Slovenia\"\>", 
+             ",", "\<\"WL_TNOW\"\>", 
+             ",", "\<\"Time devoted to leisure and personal care\"\>", 
+             ",", "\<\"L\"\>", ",", "\<\"Value\"\>", ",", "\<\"WMN\"\>", 
+             ",", "\<\"Women\"\>", ",", "\<\"HOUR\"\>", ",", "\<\"Hours\"\>", 
+             ",", "0", ",", "\<\"units\"\>", ",", "\<\"\"\>", ",", "\<\"\"\>",
+              ",", "14.12`", ",", "\<\"\"\>", ",", "\<\"\"\>"}], "}"}], ",", 
+           RowBox[{"{", 
+            
+            RowBox[{"\<\"OECD\"\>", ",", "\<\"OECD - Total\"\>", 
+             ",", "\<\"WL_TNOW\"\>", 
+             ",", "\<\"Time devoted to leisure and personal care\"\>", 
+             ",", "\<\"L\"\>", ",", "\<\"Value\"\>", ",", "\<\"WMN\"\>", 
+             ",", "\<\"Women\"\>", ",", "\<\"HOUR\"\>", ",", "\<\"Hours\"\>", 
+             ",", "0", ",", "\<\"units\"\>", ",", "\<\"\"\>", ",", "\<\"\"\>",
+              ",", "14.74`", ",", "\<\"\"\>", ",", "\<\"\"\>"}], "}"}]}], 
+          "}"}],
+         Short[#, 5]& ],
+        BaseStyle->{Deployed -> False},
+        StripOnInput->False]},
+      {GridBox[{
+         {
+          PaneBox[
+           TagBox[
+            TooltipBox[
+             StyleBox[
+              StyleBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "sizeBriefExplanation"], StandardForm],
+                ImageSizeCache->{49.2099609375, {2., 7.}}],
+               StripOnInput->False,
+               DynamicUpdating->True,
+               LineSpacing->{1, 2},
+               LineIndent->0,
+               LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLText",
+              StripOnInput->False],
+             StyleBox[
+              DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+                StandardForm]], DynamicUpdating -> True, LineIndent -> 0, 
+              LinebreakAdjustments -> {1., 100, 0, 0, 0}, 
+              LineSpacing -> {1, 2}, StripOnInput -> False]],
+            Annotation[#, 
+             Style[
+              Dynamic[
+               FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"]], 
+              DynamicUpdating -> True, LineIndent -> 0, 
+              LinebreakAdjustments -> {1., 100, 0, 0, 0}, 
+              LineSpacing -> {1, 2}], "Tooltip"]& ],
+           Alignment->Center,
+           BaselinePosition->Baseline,
+           ImageSize->{Automatic, {25, Full}}], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{39.884765625, {0., 7.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 2, 29752370312628511694, 5/2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{46.73583984375, {0., 7.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 2, 29752370312628511694, 5 2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{34.4970703125, {0., 7.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 2, 29752370312628511694, Infinity],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{59.73046875, {0., 7.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           ButtonFunction:>FrontEndExecute[{
+              FrontEnd`SetOptions[
+              FrontEnd`$FrontEnd, 
+               FrontEnd`PreferencesSettings -> {"Page" -> "Advanced"}], 
+              FrontEnd`FrontEndToken["PreferencesDialog"]}],
+           Evaluator->None,
+           Method->"Preemptive"]}
+        },
+        AutoDelete->False,
+        FrameStyle->GrayLevel[0.85],
+        GridBoxDividers->{"Columns" -> {False, {True}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{2}}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+     GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], 
+         Offset[1.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    BaseStyle->"OutputSizeLimit",
+    FrameMargins->{{12, 12}, {0, 15}},
+    FrameStyle->GrayLevel[0.85],
+    RoundingRadius->5,
+    StripOnInput->False],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  If[29752370312628511694 === $SessionID, 
+   Out[2], Message[
+     MessageName[Syntax, "noinfoker"]]; Missing["NotAvailable"]; 
+   Null]]], "Output",
+ CellChangeTimes->{3.8593258297988663`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"73347efa-c13f-4787-bf9c-e6edf7f43731"]
+}, Closed]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.859326434704054*^9, 
+  3.859326446911964*^9}},ExpressionUUID->"9a50f5e4-22f8-4a7b-9ee4-\
+3736c9ad5c1d"]
+},
+WindowSize->{1440., 747.75},
+WindowMargins->{{Automatic, 1254}, {Automatic, -6}},
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6074f59d-6566-4e74-a148-21d152b587a0"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 331, 7, 28, "Input",ExpressionUUID->"9a570a21-f7d8-4d06-9a70-d852a453047d"],
+Cell[914, 31, 60364, 1148, 5417, "Output",ExpressionUUID->"a39e0539-4e4f-4864-b1c0-dfb1bbb0d029"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[61315, 1184, 334, 7, 24, "Input",ExpressionUUID->"9579587a-1df2-494d-a255-bc50bbda1b13"],
+Cell[61652, 1193, 11015, 268, 156, "Output",ExpressionUUID->"73347efa-c13f-4787-bf9c-e6edf7f43731"]
+}, Closed]],
+Cell[72682, 1464, 152, 3, 24, "Input",ExpressionUUID->"9a50f5e4-22f8-4a7b-9ee4-3736c9ad5c1d"]
+}
+]
+*)
+
